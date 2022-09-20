@@ -1,0 +1,14 @@
+spring:
+  rabbitmq:
+    host: 127.0.0.1
+    username: rabbitmq
+    password: rabbitmq
+  cloud: 
+    stream:
+      function:
+        definition: publishPoint,processCommand
+      bindings:
+        publishPoint-out-0:
+          destination: status
+        processCommand-in-0:
+          destination: command
